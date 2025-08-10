@@ -42,12 +42,12 @@ class TodoScreen extends ConsumerWidget {
               ],
             ),
           ),
-          if (state.isLoading) const CircularProgressIndicator(),
-          if (state.error != null)
-            Text(
-              'Error: ${state.error}',
-              style: const TextStyle(color: Colors.red),
-            ),
+          // if (state.isLoading) const CircularProgressIndicator(),
+          // if (state.error != null)
+          //   Text(
+          //     'Error: ${state.error}',
+          //     style: const TextStyle(color: Colors.red),
+          //   ),
           Expanded(
             child: ListView.builder(
               itemCount: state.todos.length,

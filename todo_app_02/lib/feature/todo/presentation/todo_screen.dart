@@ -44,7 +44,19 @@ class TodoScreen extends ConsumerWidget {
               itemCount: state.todos.length,
               itemBuilder: (context, index) {
                 final todo = state.todos[index];
-                return ListTile(title: Text(todo.title));
+                return ListTile(
+                  title: Text(todo.title),
+                  leading: Icon(
+                    todo.isDone
+                        ? Icons.check_box
+                        : Icons.check_box_outline_blank,
+                    color: todo.isDone ? Colors.green : null,
+                  ),
+                  splashColor: Colors.grey.withValues(alpha: 0.1),
+                  onTap: () {
+                    controller.toggle(todo.id);
+                  },
+                );
               },
             ),
           ),

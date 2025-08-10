@@ -12,6 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'TODO App', home: TodoScreen());
+    return MaterialApp(
+      title: 'TODO App',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+      ),
+      home: TodoScreen(),
+    );
   }
 }
