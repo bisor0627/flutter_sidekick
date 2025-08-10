@@ -17,4 +17,14 @@ class TodoController extends Notifier<TodoState> {
     final newTodo = Todo(id: _uuid.v4(), title: title);
     state = state.copyWith(todos: [...state.todos, newTodo]);
   }
+
+  void toggle(String id) {
+    final updatedTodos = state.todos.map((todo) {
+      if (todo.id == id) {
+        return todo.copyWith(isDone: !todo.isDone);
+      }
+      return todo;
+    }).toList();
+    state = state.copyWith(todos: updatedTodos);
+  }
 }

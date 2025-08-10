@@ -18,9 +18,5 @@ part 'todo_state.freezed.dart';
 
 @freezed
 class TodoState with _$TodoState {
-  const factory TodoState({
-    @Default([]) List<Todo> todos,
-    @Default(false) bool isLoading,
-    String? error,
-  }) = _TodoState;
+  const factory TodoState({@Default([]) List<Todo> todos}) = _TodoState;
 }

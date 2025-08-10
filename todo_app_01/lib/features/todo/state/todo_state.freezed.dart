@@ -18,8 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TodoState {
   List<Todo> get todos => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
 
   /// Create a copy of TodoState
   /// with the given fields replaced by the non-null parameter values.
@@ -33,7 +31,7 @@ abstract class $TodoStateCopyWith<$Res> {
   factory $TodoStateCopyWith(TodoState value, $Res Function(TodoState) then) =
       _$TodoStateCopyWithImpl<$Res, TodoState>;
   @useResult
-  $Res call({List<Todo> todos, bool isLoading, String? error});
+  $Res call({List<Todo> todos});
 }
 
 /// @nodoc
@@ -50,25 +48,13 @@ class _$TodoStateCopyWithImpl<$Res, $Val extends TodoState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? todos = null,
-    Object? isLoading = null,
-    Object? error = freezed,
-  }) {
+  $Res call({Object? todos = null}) {
     return _then(
       _value.copyWith(
             todos: null == todos
                 ? _value.todos
                 : todos // ignore: cast_nullable_to_non_nullable
                       as List<Todo>,
-            isLoading: null == isLoading
-                ? _value.isLoading
-                : isLoading // ignore: cast_nullable_to_non_nullable
-                      as bool,
-            error: freezed == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                      as String?,
           )
           as $Val,
     );
@@ -84,7 +70,7 @@ abstract class _$$TodoStateImplCopyWith<$Res>
   ) = __$$TodoStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Todo> todos, bool isLoading, String? error});
+  $Res call({List<Todo> todos});
 }
 
 /// @nodoc
@@ -100,25 +86,13 @@ class __$$TodoStateImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? todos = null,
-    Object? isLoading = null,
-    Object? error = freezed,
-  }) {
+  $Res call({Object? todos = null}) {
     return _then(
       _$TodoStateImpl(
         todos: null == todos
             ? _value._todos
             : todos // ignore: cast_nullable_to_non_nullable
                   as List<Todo>,
-        isLoading: null == isLoading
-            ? _value.isLoading
-            : isLoading // ignore: cast_nullable_to_non_nullable
-                  as bool,
-        error: freezed == error
-            ? _value.error
-            : error // ignore: cast_nullable_to_non_nullable
-                  as String?,
       ),
     );
   }
@@ -127,11 +101,7 @@ class __$$TodoStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TodoStateImpl implements _TodoState {
-  const _$TodoStateImpl({
-    final List<Todo> todos = const [],
-    this.isLoading = false,
-    this.error,
-  }) : _todos = todos;
+  const _$TodoStateImpl({final List<Todo> todos = const []}) : _todos = todos;
 
   final List<Todo> _todos;
   @override
@@ -143,14 +113,8 @@ class _$TodoStateImpl implements _TodoState {
   }
 
   @override
-  @JsonKey()
-  final bool isLoading;
-  @override
-  final String? error;
-
-  @override
   String toString() {
-    return 'TodoState(todos: $todos, isLoading: $isLoading, error: $error)';
+    return 'TodoState(todos: $todos)';
   }
 
   @override
@@ -158,19 +122,12 @@ class _$TodoStateImpl implements _TodoState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TodoStateImpl &&
-            const DeepCollectionEquality().equals(other._todos, _todos) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.error, error) || other.error == error));
+            const DeepCollectionEquality().equals(other._todos, _todos));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(_todos),
-    isLoading,
-    error,
-  );
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_todos));
 
   /// Create a copy of TodoState
   /// with the given fields replaced by the non-null parameter values.
@@ -182,18 +139,10 @@ class _$TodoStateImpl implements _TodoState {
 }
 
 abstract class _TodoState implements TodoState {
-  const factory _TodoState({
-    final List<Todo> todos,
-    final bool isLoading,
-    final String? error,
-  }) = _$TodoStateImpl;
+  const factory _TodoState({final List<Todo> todos}) = _$TodoStateImpl;
 
   @override
   List<Todo> get todos;
-  @override
-  bool get isLoading;
-  @override
-  String? get error;
 
   /// Create a copy of TodoState
   /// with the given fields replaced by the non-null parameter values.
